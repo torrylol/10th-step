@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Defects Reflection</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #666;
+    }
+
+    .category {
+      margin-bottom: 1rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checkbox-item span {
+      padding-top: 2px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 1.5rem;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    button:active {
+      background: #222;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Character Defects Reflection</h1>
+
+  <label for="disturbed">Disturbed</label>
+  <textarea id="disturbed" placeholder="What's disturbing you?"></textarea>
+
+  <div class="category" data-category="Selfish">
+    <h2>Selfish</h2>
+    <label class="checkbox-item"><input type="checkbox" value="Not seeing the other person's point of view, problems or needs"><span>Not seeing the other person's point of view, problems or needs</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting things my way"><span>Wanting things my way</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting special treatment"><span>Wanting special treatment</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting to control or dominate others"><span>Wanting to control or dominate others</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Thinking I'm better (grandiosity)"><span>Thinking I'm better (grandiosity)</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting to be the best"><span>Wanting to be the best</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Thinking others are jealous"><span>Thinking others are jealous</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting others to be like me"><span>Wanting others to be like me</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Being miserly or possessive"><span>Being miserly or possessive</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting more than my share"><span>Wanting more than my share</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Reacting from self-loathing/self-righteousness"><span>Reacting from self-loathing/self-righteousness</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Too concerned about me, my needs, my wants"><span>Too concerned about me, my needs, my wants</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Trying to control how people think of/perceive me (image management)"><span>Trying to control how people think of/perceive me (image management)</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Wanting to look good or be liked"><span>Wanting to look good or be liked</span></label>
+  </div>
+
+  <div class="category" data-category="Frightened of">
+    <h2>Frightened of</h2>
+    <label class="checkbox-item"><input type="checkbox" value="People's opinions"><span>People's opinions</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Rejection/abandonment"><span>Rejection/abandonment</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Loneliness"><span>Loneliness</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Physical injury/abuse"><span>Physical injury/abuse</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Not being able to control/change something/someone"><span>Not being able to control/change something/someone</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="My inferiority"><span>My inferiority</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Criticism"><span>Criticism</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Expressing ideas/feelings"><span>Expressing ideas/feelings</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Getting trapped"><span>Getting trapped</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Exposure, embarrassment"><span>Exposure, embarrassment</span></label>
+  </div>
+
+  <div class="category" data-category="Dishonest">
+    <h2>Dishonest</h2>
+    <label class="checkbox-item"><input type="checkbox" value="Not seeing or admitting where I'm at fault"><span>Not seeing or admitting where I'm at fault</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Having a superior attitude – think I'm better"><span>Having a superior attitude – think I'm better</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Blaming others for my problems"><span>Blaming others for my problems</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Not admitting where I've done the same"><span>Not admitting where I've done the same</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Not expressing feelings or ideas"><span>Not expressing feelings or ideas</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Lying, cheating, stealing"><span>Lying, cheating, stealing</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Hiding reality – not facing facts"><span>Hiding reality – not facing facts</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Stubbornly holding onto inaccurate beliefs"><span>Stubbornly holding onto inaccurate beliefs</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Breaking rules"><span>Breaking rules</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Lying to myself"><span>Lying to myself</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Exaggerate or minimize stories, thoughts, etc."><span>Exaggerate or minimize stories, thoughts, etc.</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Setting myself up to be harmed/wronged"><span>Setting myself up to be harmed/wronged</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Expecting others to be what they aren't"><span>Expecting others to be what they aren't</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Being perfectionistic"><span>Being perfectionistic</span></label>
+  </div>
+
+  <div class="category" data-category="Self-Seeking">
+    <h2>Self-Seeking</h2>
+    <label class="checkbox-item"><input type="checkbox" value="Manipulating others to do my will"><span>Manipulating others to do my will</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Putting others down internally or externally to build myself up"><span>Putting others down internally or externally to build myself up</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Engaging in character assassination (gossip)"><span>Engaging in character assassination (gossip)</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Acting superior"><span>Acting superior</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Acting to fill the void"><span>Acting to fill the void</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Engaging in gluttony or lusting after someone else's experience"><span>Engaging in gluttony or lusting after someone else's experience</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Ignoring others' needs"><span>Ignoring others' needs</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Trying to control others"><span>Trying to control others</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Getting revenge when I didn't get what I wanted"><span>Getting revenge when I didn't get what I wanted</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Holding on to a resentment"><span>Holding on to a resentment</span></label>
+    <label class="checkbox-item"><input type="checkbox" value="Acting to make me feel good"><span>Acting to make me feel good</span></label>
+  </div>
+
+  <label for="prayer">Prayer</label>
+  <textarea id="prayer" placeholder="Your prayer..."></textarea>
+
+  <button onclick="handleShare()">Share</button>
+
+  <div id="toast" class="toast"></div>
+
+  <script>
+    function handleShare() {
+      const disturbed = document.getElementById('disturbed').value.trim();
+      const prayer = document.getElementById('prayer').value.trim();
+      const categories = document.querySelectorAll('.category');
+
+      let output = '';
+
+      // Add Disturbed section
+      if (disturbed) {
+        output += 'Disturbed:\n' + disturbed + '\n';
+      }
+
+      // Add each category with checked items
+      categories.forEach(category => {
+        const categoryName = category.dataset.category;
+        const checkedItems = category.querySelectorAll('input[type="checkbox"]:checked');
+
+        if (checkedItems.length > 0) {
+          output += '\n' + categoryName + ':\n';
+          checkedItems.forEach(item => {
+            output += item.value + '\n';
+          });
+        }
+      });
+
+      // Add Prayer section
+      if (prayer) {
+        output += '\nPrayer:\n' + prayer + '\n';
+      }
+
+      // Always add "Helping someone" at the end
+      output += '\nHelping someone';
+
+      // Try Web Share API first, fallback to clipboard
+      if (navigator.share) {
+        navigator.share({ text: output })
+          .catch(err => {
+            if (err.name !== 'AbortError') {
+              copyToClipboard(output);
+            }
+          });
+      } else {
+        copyToClipboard(output);
+      }
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied to clipboard');
+      }).catch(() => {
+        showToast('Failed to copy');
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
